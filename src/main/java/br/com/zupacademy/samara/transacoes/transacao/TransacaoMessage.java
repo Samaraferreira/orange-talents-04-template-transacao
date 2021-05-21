@@ -5,7 +5,7 @@ import br.com.zupacademy.samara.transacoes.estabelecimento.EstabelecimentoRespon
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class TransacaoResponse {
+public class TransacaoMessage {
 
     private String id;
     private BigDecimal valor;
@@ -13,12 +13,8 @@ public class TransacaoResponse {
     private CartaoResponse cartao;
     private LocalDateTime efetivadaEm;
 
-    public TransacaoResponse(Transacao transacao) {
-        this.id = transacao.getId();
-        this.valor = transacao.getValor();
-        this.estabelecimento = new EstabelecimentoResponse(transacao.getEstabelecimento());
-        this.cartao = new CartaoResponse(transacao.getCartao());
-        this.efetivadaEm = transacao.getEfetivadaEm();
+    @Deprecated
+    public TransacaoMessage() {
     }
 
     public String getId() {
@@ -39,5 +35,9 @@ public class TransacaoResponse {
 
     public LocalDateTime getEfetivadaEm() {
         return efetivadaEm;
+    }
+
+    public Transacao toModel() {
+        return new Transacao(id, valor, estabelecimento.toModel(), cartao.toModel(), efetivadaEm);
     }
 }

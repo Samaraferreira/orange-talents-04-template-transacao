@@ -29,6 +29,18 @@ public class Estabelecimento {
         this.endereco = endereco;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
     @Override
     public String toString() {
         return "Estabelecimento{" +

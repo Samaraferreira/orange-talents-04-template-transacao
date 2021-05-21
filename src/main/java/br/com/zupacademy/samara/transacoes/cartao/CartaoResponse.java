@@ -9,9 +9,9 @@ public class CartaoResponse {
     public CartaoResponse() {
     }
 
-    public CartaoResponse(String id, String email) {
-        this.id = id;
-        this.email = email;
+    public CartaoResponse(Cartao cartao) {
+        this.id = cartao.getId().toString();
+        this.email = cartao.getEmail();
     }
 
     public String getId() {

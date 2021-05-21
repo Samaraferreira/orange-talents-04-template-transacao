@@ -34,8 +34,12 @@ public class Cartao {
         this.email = email;
     }
 
-    public String getNumero() {
-        return numero;
+    public Long getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override
